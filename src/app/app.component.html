@@ -1,20 +1,244 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img  src="assets/img/logo-mabs.png" width="28" height="28">
+    </a>
 
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" #buttonmenu (click)="toggleMenu()">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu" #menu>
+    <div class="navbar-start">
+      <a class="navbar-item active" (click)="scrollToElement(header,'header')" #header_li>
+        {{'Inicio' | uppercase}}
+      </a>
+      <a class="navbar-item" (click)="scrollToElement(about,'about')" #about_li>
+        {{'Sobre mí' | uppercase}}
+      </a>
+      <a class="navbar-item" (click)="scrollToElement(design,'design')" #design_li>
+        {{'Gráfico' | uppercase}}
+      </a>
+            <a class="navbar-item" (click)="scrollToElement(digital,'digital')" #digital_li>
+              {{'Digital' | uppercase}}
+            </a>
+      <a class="navbar-item" (click)="scrollToElement(contact,'contact')" #contact_li>
+        {{'Contacto' | uppercase}}
+      </a>
+
+    </div>
+  </div>
+</nav>  
+
+<div class="header" #header>
+    <div class="header__container">
+      <video autoplay loop class="header__video"> 
+         <source src="assets/design.mp4" type="video/mp4">
+       </video>  
+        <div class="header__overlay"></div>
+       <h1 class="title is-1 header__title">
+        <span class="header__title-typed"></span> design
+       </h1>
+    </div>
+</div>
+
+
+
+ <div class="about" #about>
+   <div class="about__container">
+     <div class="about__photo">
+       <img src="assets/img/logo-mabs.png" alt="">
+     </div>
+     <div class="about__description">
+       <p>Licenciada en Diseño gráfico digital con 5 años de experiencia, especializada en branding y creación de contenido gráfico para aplicaciones móviles, 
+         apasionada por diseño web, UX/UI y nuevas tecnologías. </p>
+         <p>Actual líder del área de diseño de <a class="about__link" href="http://solucionescolabora.com/inicio" target="_blank">Soluciones Colabora</a>, buscando siempre diseños simples e intuitivos de todas los proyectos </p>
+     </div>
+   </div>
+</div>
+
+
+
+
+<div class="skills" #skills>
+    <div class="design__title">
+        <h1 class="design__title-item">
+          {{'Skills' | uppercase}} 
+        </h1>
+        <span class="typed-cursor typed-cursor--blink">|</span>
+    </div>
+    <div class="skills__container">
+      <div class="skills__stack">
+        <div class="skills__stack-container">
+          <img class="skills__stack-float" src="assets/img/intro03.jpg" alt="">
+          <img class="skills__stack-float" src="assets/img/intro01.jpg" alt="">
+          <img class="skills__stack-float" src="assets/img/intro02.jpg" alt="">
+          <img class="skills__stack-float" src="assets/img/login.jpg" alt="">
+        </div>
+      </div>
+      <div class="skills__description">
+          <div class="skills__description__item">
+              <div class="skills__description__item-img">
+                <img src="assets/img/PS.png" alt="">
+              </div>
+              <div class="skills__description__item-progress">
+                <progress class="progress" value="95" max="100">15%</progress>
+              </div>
+          </div>
+          <div class="skills__description__item">
+              <div class="skills__description__item-img">
+                <img src="assets/img/AI.png" alt="">
+              </div>
+              <div class="skills__description__item-progress">
+                <progress class="progress" value="75" max="100">15%</progress>
+              </div>
+          </div>
+      <div class="skills__description__item">
+          <div class="skills__description__item-img">
+            <img src="assets/img/html.png" alt="">
+          </div>
+          <div class="skills__description__item-progress">
+            <progress class="progress" value="85" max="100">15%</progress>
+          </div>
+      </div>
+      <div class="skills__description__item">
+          <div class="skills__description__item-img">
+            <img src="assets/img/sass.png" alt="">
+          </div>
+          <div class="skills__description__item-progress">
+            <progress class="progress" value="80" max="100">15%</progress>
+          </div>
+      </div>
+      <div class="skills__description__item">
+          <div class="skills__description__item-img">
+            <img src="assets/img/wpress.png" alt="">
+          </div>
+          <div class="skills__description__item-progress">
+            <progress class="progress" value="80" max="100">15%</progress>
+          </div>
+      </div>
+      <div class="skills__description__item">
+          <div class="skills__description__item-img">
+            <img src="assets/img/invision.png" alt="">
+          </div>
+          <div class="skills__description__item-progress">
+            <progress class="progress" value="80" max="100">15%</progress>
+          </div>
+      </div>
+      <div class="skills__description__item">
+          <div class="skills__description__item-img">
+            <img src="assets/img/ID.png" alt="">
+          </div>
+          <div class="skills__description__item-progress">
+            <progress class="progress" value="65" max="100">15%</progress>
+          </div>
+      </div>
+      </div>
+    </div>
+</div>
+
+
+
+<div class="design" #design>
+  <div class="design__container">
+    <div class="design__title">
+      <h1 class="design__title-item">
+        {{'Branding & Design' | uppercase}} 
+      </h1>
+      <span class="typed-cursor typed-cursor--blink">|</span>
+    </div>
+    <div class="design__caroussel-holder">
+      <div class="design__caroussel">
+    <owl-carousel-o [options]="customOptions" #owlCar>
+      <ng-template carouselSlide>
+        <img src="assets/lily.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/3dprintec.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/stok.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/nutricion.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/rentas.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/pyme.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/concept.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/panlleta.png" alt="">
+      </ng-template>  
+    </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="design design-bg" #digital>
+  <div class="design__container">
+    <div class="design__title">
+      <h1 class="design__title-item">
+        {{'Páginas Web' | uppercase}} 
+      </h1>
+      <span class="typed-cursor typed-cursor--blink">|</span>
+    </div>
+    <div class="design__caroussel-holder">
+      <div class="design__caroussel">
+    <owl-carousel-o [options]="customOptions" #owlCar>
+      <ng-template carouselSlide>
+        <img src="assets/Webs/sc.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/Webs/dados.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/Webs/pasha.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/Webs/danny.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/Webs/sp.png" alt="">
+      </ng-template>  
+      <ng-template carouselSlide>
+        <img src="assets/Webs/segui.png" alt="">
+      </ng-template>    
+      <ng-template carouselSlide>
+        <img src="assets/Webs/torritos.png" alt="">
+      </ng-template>    
+      <ng-template carouselSlide>
+        <img src="assets/Webs/dapsa.png" alt="">
+      </ng-template>    
+      <ng-template carouselSlide>
+        <img src="assets/Webs/maxi.png" alt="">
+      </ng-template>    
+    </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="contact" #contact>
+  <div class="contact__container">
+    <div class="contact__link contact__link-web" ><a href="http://solucionescolabora.com/inicio" target="_blank" > <i class="fas fa-rocket"></i>{{'www.solucionescolabora.com'}}</a></div>
+    <div class="contact__link contact__link-facebook"><a href="https://www.facebook.com/SolucionesColaboraTI/" target="_blank" > <i class="fab fa-facebook"> </i> {{'SolucionesColabora'}}</a></div>
+    <div class="contact__link contact__link-instagram"><a href="https://www.instagram.com/solucionescolabora/?hl=es-la" target="_blank" ><i class="fab fa-instagram"> </i> {{'@SolucionesColabora' }}</a></div>
+    <div class="contact__link contact__link-maps"><a href="https://goo.gl/maps/bNfFuFpHDWA2" target="_blank" ><i class="fas fa-map-marker-alt"></i>Calle 23 x 40-a y Av. Merida 2000</a></div>
+    <div class="contact__link  contact__link-phone"><a href="tel:9994325074" target="_blank"><i class="fas fa-mobile-alt"></i> (999)-432-50-74</a></div>
+    <div class="contact__link contact__link-whatsapp"><a href="tel:9992148506" target="_blank" ><i class="fab fa-whatsapp"></i> (999)-214-85-06</a></div>
+  </div>
+</div> 
+ 

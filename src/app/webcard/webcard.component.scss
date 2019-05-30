@@ -1,0 +1,31 @@
+@import '../../styles.scss';
+
+.webcard {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    &__web {
+        position:relative;
+        &-svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 702.5px;
+            height: 489.1px;
+        }
+        &-img {
+            // position: absolute;
+            img {
+
+            
+            top: 68px;
+            left: 1px;
+            width: 700px;
+            height: 420px;
+            }
+            // object-fit: cover;
+        }
+    }
+}
